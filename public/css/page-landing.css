@@ -1,0 +1,120 @@
+#page-landing {
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%) no-repeat;
+  text-align: center;
+  min-height: 100vh;
+
+  display: flex;
+}
+
+#container {
+  margin: auto;
+  width: min(
+    90%,
+    112rem
+  ); /*rem mantém a proporção caso necessário a mudança de px no fonte do main! 112rem=112px, limitar os lados do container=margem, é necessario colocar em % */
+}
+
+.location,
+h1,
+.visit p {
+  height: 16vh;
+}
+
+#logo {
+  animation-delay: 50ms; /*ms=milissegundos*/
+}
+
+.location {
+  animation-delay: 100ms;
+  font-size: 2.4rem;
+  line-height: 1.5;
+}
+
+.visit a:hover {
+  background: #96feff;
+}
+
+main h1 {
+  animation-delay: 150ms;
+  font-size: clamp(4rem, 8vw, 8.4rem);
+}
+
+.visit p {
+  animation-delay: 200ms;
+}
+
+.visit a {
+  width: 8rem;
+  height: 8rem;
+  background: #ffd666;
+
+  border: none;
+  border-radius: 3rem;
+
+  /*alinhar os elementos ao meio usa o align-items:center; e o justify-content: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+  /* alinhar baixando a margem topo e oslados de forma automática. 
+    exemplo: margin: 50px 10px 600px 100px significa que 50px= topo, 10px= os laterais, 60= abaixo e 100px= no sentido horário.
+    padding é igual tbm!!*/
+  transition: background 200ms;
+  animation-delay: 250ms;
+}
+
+/* desktop version */
+
+@media (min-width: 760px) {
+  #container {
+    /* shorthand background: image repeat position / size */
+    padding: 5rem 2rem;
+    background: url("../images/bg.svg") no-repeat 80% /
+      clamp(30rem, 54vw, 56rem);
+  }
+
+  header {
+    display: flex;
+    align-items: center; /*alinhar o happy e poaRS no eixo x*/
+    justify-content: space-between;
+  }
+
+  .location,
+  h1,
+  .visit p {
+    height: initial;
+    text-align: initial;
+  }
+
+  .location {
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  main h1 {
+    font-weight: bold;
+    line-height: 0.88;
+
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+
+    width: min(300px, 80%);
+  }
+
+  .visit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem); /*20rem=20px*/
+  }
+
+  .visit a {
+    margin: initial; /*para n pegar o auto da margem*/
+  }
+}
